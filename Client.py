@@ -1,5 +1,8 @@
+import time
 import AES256
 
-key = str(time.time()).encode('utf-8')
-
-print(AES256.encrypt("awdawd", key))
+AES = AES256.AES256('ThisIs16bytesKey')
+encrypted = AES.encrypt('Test1234Test test aBcD 가나다라')
+decrypted = AES.decrypt(encrypted)
+print(encrypted)
+print(decrypted)
